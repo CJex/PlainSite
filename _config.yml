@@ -1,0 +1,6 @@
+theme: jekyll-theme-cayman
+
+exclude:
+  - lib/PlainSite/_scaffold/
+  - test/fixtures/
+

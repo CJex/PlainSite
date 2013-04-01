@@ -1,0 +1,41 @@
+---
+layout: base.html
+---
+
+
+<% content_for :page_title do %>
+  Page <%=display_num %> | Posts of <%=category.display_name%>
+<% end %>
+
+<% content_for :page_content do %>
+  <%= include 'header.html' %>
+  <section class="category-page">
+  <h2>
+    <small>Total: <%=total_pages_count%></small>
+    <a href="<%=url%>" rel="self">Page <%=display_num %></a>
+    |
+    <a href="<%=site.url_for "#{category.data_id}/index.html" %>"><%=category.display_name%></a>
+  </h2>
+  <ul class="posts-list">
+  <% posts.each do |p| %>
+    <li>
+
+      <a href="<%=p.url%>"><%=p.title%></a>
+      <small><time><%=p.date%></time></small>
+      <br/>
+    </li>
+  <% end %>
+  </ul>
+  <% if prev_page || next_page %>
+  <hr />
+  <nav class="near-posts link-list">
+    <% if next_page %>
+      <a href="<%=next_page.url%>" rel="next"><i>⇦</i><em>Next</em></a>
+    <% end %>
+    <% if prev_page %>
+      <a href="<%=prev_page.url%>" rel="prev" class="prev"><i>⇨</i><em>Previous</em></a>
+    <% end %>
+  </nav>
+  <% end %>
+  </section>
+<% end %>

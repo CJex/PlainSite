@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title><%=
+if yield :page_title
+  html_escape(yield :page_title)
+else
+  html_escape site.name
+end
+%></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="<%=site.url_for "css/pygments.css" %>" />
+<link rel="stylesheet" type="text/css" href="<%=site.url_for "css/style.css" %>" />
+<link rel="alternate" type="application/rss+xml" title="<%=site.name%>" href="<%=site.url_for "rss.xml" %>"/>
+<link rel="shortcut icon" href="<%=site.url_for "favicon.png" %>" type="image/png" />
+</head>
+<body class="dark">
+
+  <%=yield :page_content%>
+
+  <footer class="site-footer">
+      <a rel="license"
+      title="This blog is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."
+      href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh" target="_blank"><!--img alt="知识共享许可协议" src="https://i.creativecommons.org/l/by-sa/3.0/80x15.png" width="80" height="14" /--><img width="80" height="15" title="知识共享许可协议" alt="知识共享许可协议" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAIAAAD8q9/YAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIySURBVHjaYmAYYYARiP///z9SfMvIyAJhrdm0Glliz669M6fO7OjoKC8vx9Tm6up66tSptu5WcQlxIFdeVsHVyfXjh4+D3LeQeGXClHj54uXyxctx+RYIdu/ebWZmNrl/CoT74eOHwoLCoRLJWDy8fMkKYWFhXL6FAGBw3Lxxc8PajUD2x08fPHw8vH28h6qHL128lJ6eDmScPXtWWVkZmO6Bafj9+/dAEsgGigDFjY2NXVxcrl29BjWFiQnIRUs/EICcnDDZ+LXQonBhwvDt5c+fPgP9A2SHhYUBGUBbgWRnZyfQn+/evQPG/L1794CyQME7t+/AUzUwkWOWEEAAcTScASSBbKy+ZYQBZC7V/Yzu4a9fvgBJQUFBYJQCPQbxOTABA9lKSkpA8bS0tNDQUFgRD3X6z58/GFkYscYY3HsQ18O5aPEJkUVLCPSIYW4eHiAJ9C3Qb0AfAmMVUiwDuUA/A8UrKipmzZqFljjZ2Tn+//mPJ4ax1hDw+MSqHk2WVh7W09fl5eWF+BMYsXv27AHaCvQ5kA2MbSEhIaAIJLueOXNGUVkRokuAXwBYUeGPYYJ1BknqKW14INfDfV39z58+v3//Ph5twBAxMTGJjosOCPYHcmWl5Zobmrdu2TrI62FgaGIppaPjot6+fQOMUjyay8rKVFSVIb7l5xPYsWXHIPctvmoJ2H5KzUytrKxsb2/HqsfJ2en69esFJQXw9Nw/oX+0LT1I29IjrbPEABBgAEdwNeO7yfOaAAAAAElFTkSuQmCC" /></a>
+      <small>
+        Powered by <a href="https://jex.im/PlainSite/" target="_blank">PlainSite</a>.
+      </small>
+  </footer>
+</body>
+</html>

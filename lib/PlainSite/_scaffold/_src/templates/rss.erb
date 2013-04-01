@@ -1,0 +1,29 @@
+<%=
+require 'rss/maker'
+
+content = RSS::Maker.make('2.0') do |m|
+  m.channel.updated = Time.now.to_s
+  m.channel.title = site.name
+  m.channel.link  = site.url
+  m.channel.description = site.name
+  m.items.do_sort = false
+
+  posts.each do |post|
+    m.items.new_item do |item|
+      item.title = post.title
+    item.author = site.author
+      item.link =  post.url
+      item.description= post.content
+      item.date = post.date.to_s
+    if post.respond_to? :updated_date
+    item.updated = post.updated_date.to_s
+    else
+    item.updated = Time.now.to_s
+    end
+    end
+  end
+end
+
+content.to_s
+
+%>

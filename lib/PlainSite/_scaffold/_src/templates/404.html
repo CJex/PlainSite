@@ -1,0 +1,16 @@
+---
+layout: base.html
+---
+
+<% content_for :page_title do %>
+   Page Not Found! — <%=site.name%>
+<% end %>
+<% content_for :page_content do %>
+<%= include 'header.html' %>
+<section  style="text-align:center;padding:1rem 0;" class="error">
+<h2>404 Page Not Found!</h2>
+<p>This is not the web page you are looking for!</p>
+<p>Something goes wrong!</p>
+<p style="font-size:40px;white-space:nowrap;">≧◔◡◔≦</p>
+</section>
+<% end %>

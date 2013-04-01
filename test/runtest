@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for i in $@;
+do
+  ruby -I ../lib/ "$i"
+done;

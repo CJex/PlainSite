@@ -1,0 +1,7 @@
+Gemfile.lock
+rdoc
+.DS_Store
+*.rbc
+*.swp
+*~
+*#*

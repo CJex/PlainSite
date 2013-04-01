@@ -1,0 +1,506 @@
+@charset "utf-8";
+
+/*Reset*/
+html,body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+}
+img {border:0;}
+
+html {
+  font-size:18px;
+  height: 100%;
+  color: #333222;
+  background-color: darkgreen;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  font-family:"Microsoft Yahei","WenQuanYi Micro Hei",helvetica,arial,sans-serif;
+  margin:0 auto;
+  padding:0 40px;
+  padding:0 36px;
+  word-wrap:break-word;
+  max-width:68rem;
+  min-height: 100%;
+  position:relative;
+  line-height:160%;
+  width:1024px\9;
+  background:#F4FCFC;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  display:block;
+  margin:34px 0 8px 0;
+  font-weight:bold;
+  color:#2c3e50;
+  line-height:140%;
+}
+h1:lang(zh),h2:lang(zh),h3:lang(zh),
+:lang(zh) h1,:lang(zh) h2,:lang(zh) h3 {
+  text-align:center;
+}
+h1 {font-size:32px;margin-bottom:16px;}
+h2 {font-size:30px;margin-bottom:14px;}
+h3 {font-size:26px;margin-bottom:12px;}
+h4 {font-size:24px;margin-top:22px;}
+h5 {font-size:22px;margin-top:18px;}
+h6 {font-size:20px;margin-top:16px;}
+
+p {
+  margin:8px 0 14px 0;
+}
+:lang(zh) p,p:lang(zh) {
+  text-indent:2em;
+}
+
+ul,ol {
+  margin:10px 2em;
+}
+ol:lang(zh) {
+  list-style-type:cjk-ideographic  ;
+}
+ul { list-style-type: circle; }
+li {
+  margin:2px 0;
+}
+li ul {
+  list-style-type:cycle(disc circle square circle);
+}
+ul ul {
+  list-style-type: disc;
+}
+ul ul ul {
+  list-style-type: circle;
+}
+ul ul ul ul {
+  list-style-type: square;
+}
+ul ul ul ul ul {
+  list-style-type: circle;
+}
+ul ul ul ul ul ul { /*It's funny!Huh?*/
+  list-style-type: disc;
+}
+
+li {
+  padding:4px 0;
+}
+
+hr{
+  border:none;
+  border-bottom:1px solid #cfcfcf;
+  margin:12px 0;
+  height:0px;
+}
+
+br {
+  display:block;
+  float:none;
+  clear:both;
+  width:0;
+  height:0;
+  line-height:0;
+  overflow:hidden;
+}
+
+blockquote {
+  margin: 12px 0;
+  color:#555;
+  padding: 8px 1em;
+  background:#F8FAF8;
+  border-left: 6px solid #CCF;
+}
+blockquote blockquote {
+  padding: 0 0 0 1em;
+  margin-left: 2em;
+}
+acronym, abbr {border-bottom: 1px dotted;cursor:help;}
+del {text-decoration: line-through;}
+q:before,q:after {content:''}
+:lang(zh) q:before,q:lang(zh):before {content: '「';}
+:lang(zh) q:after,q:lang(zh):after {content: '」';}
+
+em,cite {
+  font-style:normal;
+  padding:0 4px;
+  color:#000;
+}
+i {
+  font-style:italic;
+}
+
+sub, sup {
+  font-size: 70%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+a {
+  text-decoration: none;
+  color:#1abc9c;
+  cursor:pointer;
+}
+a:hover {
+  color:#00B;
+  text-decoration: underline;
+}
+a:active {
+  color:#DD4B39;
+}
+a:visited {
+  color:#609;
+}
+
+li a,li a:hover,.link-list a,.link-list a:hover,
+small a,small a:hover {
+  color:#4450A2;
+}
+
+li a:visited,.link-list a:visited,small a:visited {
+  color:#7240AF;
+}
+
+h1 a,h2 a,h3 a,h4 a {
+  color:inherit;
+}
+
+ins {text-decoration: none;}
+u  {text-decoration: underline;}
+
+mark {background: #F8FFE4;}
+small, figcaption {
+  font-size: 60%;
+  color: #44444E;
+}
+
+pre, code {
+  font-family:"DejaVu Sans Mono","WenQuanYi Micro Hei Mono","Ubuntu Mono",Menlo,Monaco,"Courier New", Courier, monospace;
+  white-space: pre;
+  word-wrap: break-word;
+}
+
+pre {
+  line-height:120%;
+}
+pre code {
+  white-space: pre;
+}
+
+div:not(.highlight) pre {
+  background:#F8F8F8;
+  background-clip: border-box;
+  padding:10px;
+  border:1px solid #EEF;
+  border-radius:12px;
+  color:#D0D0E0;
+}
+
+code {
+  color:#080;
+}
+
+
+div.highlight {
+  padding:6px;
+  background-clip: border-box;
+  border-radius:8px;
+  margin:6px 0;
+  display:table;
+}
+span.highlight {
+  padding:2px 4px;
+  background-clip: border-box;
+  border-radius:3px;
+  margin:0 2px;
+  background:#F8F8F8;
+  color:black;
+  white-space: nowrap;
+}
+.highlight pre,.highlighttable pre {
+  margin:0;
+  background:inherit;
+  border:0;
+  padding:0;
+}
+
+.highlighttable {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color:#F8F8F8;
+  border-radius:8px;
+  margin:0;
+  margin-bottom:18px;
+}
+
+.highlighttable div.highlight {
+  padding:0;
+  border-radius:0;
+  margin:0;
+}
+.highlighttable pre {
+  margin:0;
+  border:none;
+}
+.highlighttable td  {
+  padding:6px;
+}
+.highlighttable td.linenos {
+  border-right:1px solid #9A9;
+}
+
+table {
+  margin:14px auto;
+  border-color:#FFE;
+  border-width:2px;
+}
+table td ,table th {
+  padding:8px;
+}
+
+table.plain {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border:none;
+}
+
+table.plain th, table.plain td,table.plain caption{
+  border: 1px solid #DDD;
+}
+table.plain th {
+  background: #fbfbfb;
+  font-weight:bold;
+  color:#666;
+}
+table.plain caption {
+  color:#666;
+}
+table.plain thead th{
+  background: #f1f1f1;
+}
+table.plain .caption {
+  border-bottom:none;
+}
+
+.vertical-thead th {
+  text-align:center;
+  width:1em;
+}
+
+.site-header {
+  padding-bottom:6px;
+  margin-bottom:8px;
+  border-bottom:1px solid #CFCFCF;
+  padding-top:2px;
+}
+.site-header h1 {
+  font-size:200%;
+}
+
+nav.header {
+  line-height:2em;
+}
+nav.header a {
+  display:inline-block;
+  width:6em;
+  height:2em;
+  line-height:2em;
+  background:#666;
+  color:#F9F9FF;
+  margin-right:4px;
+  text-align:center;
+  margin-bottom:4px;
+}
+nav.header a:hover {
+  text-decoration:none;
+}
+
+.site-title a,.site-title a:hover,.site-title a:visited {
+  color:inherit;
+  text-decoration:none;
+}
+
+
+.site-footer {
+  height:15px;
+  text-align:center;
+  padding:30px 0;
+  border-top:1px solid #CFCFCF;
+  margin-top:12px;
+}
+.site-footer img {
+  vertical-align:middle;
+}
+.site-footer small {
+  font-size:12px;
+  line-height:14px;
+}
+section.category-posts {
+  float:left;
+  margin-right:40px;
+  margin-right:16px;
+}
+section.category-posts h2 a,
+section.category-posts h2 a:hover {
+  color:inherit;
+}
+
+ul.posts-list li {
+  list-style-type:square;
+  color:#889;
+  border-bottom:1px dashed #CCF;
+  font-size:120%;
+  padding-right:4px;
+  padding-left:2px;
+}
+
+ul.posts-list li small {
+  float:right;
+  clear:both;
+  padding-left:30px;
+  padding-left:1em;
+}
+
+nav.near-posts {
+  height:36px;
+  padding:0 44px;
+}
+nav.near-posts a {
+  display:block;
+  width:50%;
+  height:36px;
+  line-height:36px;
+  text-decoration:none;
+  position:relative;
+  float:left;
+}
+nav.near-posts a i {
+  position:absolute;
+  top:0;
+  padding:0;
+  color:gray;
+  font-size:36px;
+  font-style:normal;
+  display:block;
+  height:36px;
+  width:36px;
+}
+nav.near-posts a em {
+  display:block;
+  width:100%;
+  height:36px;
+  line-height:44px;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color:inherit;
+  padding:0;
+}
+nav.near-posts a:hover {
+  text-decoration:none;
+}
+nav.near-posts a:hover em {
+  text-decoration:underline;
+}
+nav.near-posts a[rel=prev] {
+  float:right;
+}
+nav.near-posts a[rel=prev] i {
+  right:-40px;
+  padding-left:4px;
+}
+nav.near-posts a[rel=prev] em,
+nav.near-posts a.prev em {
+  text-align:right;
+}
+nav.near-posts a[rel=next] i {
+  left:-40px;
+  padding-right:4px;
+}
+
+
+.error {
+  color:cornflowerblue;
+}
+
+.category-page h2  {
+  padding:0 2px 4px 0;
+  margin:8px 0;
+  line-height:180%;
+  border-bottom:1px dashed #AAA;
+}
+.category-page h2 small {
+  float:right;
+  font-weight:normal;
+}
+
+.category-page h2 a {
+  text-decoration:none;
+  color:#333;
+}
+
+article {
+  padding-bottom:30px;
+}
+.article-title {
+  margin:30px auto;
+  padding-bottom:16px;
+  border-bottom:1px solid #DDF;
+  color:darkgreen;
+  text-align:center;
+  line-height:200%;
+  padding:12px 40px;
+}
+.article-title a,.article-title a:hover,.article-title a:visited {
+  color:inherit;
+  text-decoration:none;
+}
+
+.article-title small {
+  display:block;
+  font-weight:normal;
+  color:#888;
+  line-height:100%;
+}
+
+.category-path {
+  font-size:12px;
+  width:100%;
+  line-height:22px;
+  border-bottom:1px dashed gray;
+}
+.category-path em {
+  color:#888;
+}
+
+.github-fork {
+  display:block;
+  width:149px;
+  height:149px;
+  position:absolute;
+  right:-1px;
+  top:0;
+}
+
+
+p.project-link {
+  margin:24px 0;
+}
+
+
+#disqus_thread {
+  margin:18px auto;
+}
+
+
